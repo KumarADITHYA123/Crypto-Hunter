@@ -1,3 +1,63 @@
+.radio {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 0.5rem;
+
+input[name="toggle"] {
+appearance: none;
+border-radius: 50%;
+opacity: 0;
+width: 15px;
+height: 15px;
+}
+
+input[name="toggle"]:hover {
+cursor: pointer;
+}
+
+#one {
+opacity: 1;
+background-color: hsl(6, 63%, 50%);
+}
+
+#two {
+background-color: hsl(25, 98%, 40%);
+}
+
+#three {
+background-color: hsl(176, 100%, 44%);
+}
+
+label {
+font-size: 10px;
+}
+
+> label {
+
+    position: absolute;
+    top: 0;
+
+}
+}
+
+```js
+const arr = [...radioBtns];
+// console.log(arr);
+
+arr.forEach((element) => {
+  element.addEventListener("click", () => {
+    element.style.opacity = "1";
+
+    arr
+      .filter((item) => item != element)
+      .forEach((item) => {
+        item.style.opacity = "0";
+      });
+  });
+});
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +128,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
