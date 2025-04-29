@@ -1,131 +1,92 @@
-.radio {
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-gap: 0.5rem;
+# Crypto Hunter
 
-input[name="toggle"] {
-appearance: none;
-border-radius: 50%;
-opacity: 0;
-width: 15px;
-height: 15px;
-}
+A responsive cryptocurrency tracking app that allows users to view real-time data, historical charts, and detailed information about their favorite cryptocurrencies.
 
-input[name="toggle"]:hover {
-cursor: pointer;
-}
+## Table of Contents
 
-#one {
-opacity: 1;
-background-color: hsl(6, 63%, 50%);
-}
+- [Overview](#overview)
+  - [The Challenge](#the-challenge)
+  - [Screenshots](#screenshots)
+  - [Links](#links)
+- [My Process](#my-process)
+  - [Built With](#built-with)
+  - [What I Learned](#what-i-learned)
+  - [Future Improvements](#future-improvements)
+  - [Resources](#resources)
+- [Author](#author)
 
-#two {
-background-color: hsl(25, 98%, 40%);
-}
+## Overview
 
-#three {
-background-color: hsl(176, 100%, 44%);
-}
+### The Challenge
 
-label {
-font-size: 10px;
-}
+Users should be able to:
 
-> label {
+- View real-time cryptocurrency prices and market data.
+- Access historical price charts for selected cryptocurrencies.
+- Search for specific cryptocurrencies and filter results.
+- Navigate seamlessly between pages for detailed coin information.
+- Experience a responsive design that adjusts to different screen sizes.
 
-    position: absolute;
-    top: 0;
+### Screenshots
 
-}
-}
+### Screenshots
 
-```js
-const arr = [...radioBtns];
-// console.log(arr);
+![](./public/CryptoHunter%20ss1.png)
+![](./public/CryptoHunter%20ss2.png)
+![](./public/CryptoHunter%20ss3.png)
 
-arr.forEach((element) => {
-  element.addEventListener("click", () => {
-    element.style.opacity = "1";
+### Links
 
-    arr
-      .filter((item) => item != element)
-      .forEach((item) => {
-        item.style.opacity = "0";
-      });
-  });
-});
+- Live Site URL: [Live site URL here](https://cryptohunter123.netlify.app/)
 
-# Getting Started with Create React App
+## My Process
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Built With
 
-## Available Scripts
+- React.js
+- Material-UI for styling
+- Axios for API calls
+- React Router for navigation
+- Chart.js for data visualization
+- Desktop-first workflow
 
-In the project directory, you can run:
+### What I Learned
 
-### `npm start`
+- Implemented React Context API for global state management (e.g., currency selection).
+- Enhanced understanding of API integration using Axios.
+- Improved skills in creating responsive layouts with Material-UI.
+- Learned how to use Chart.js for rendering interactive historical price charts.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```javascript
+// Example: Fetching historical data for a cryptocurrency
+const fetchHistoricData = async () => {
+  const { data } = await axios.get(HistoricalChart(coin.id, days, currency));
+  setHistoricData(data.prices);
+};
 ```
+
+### Future Improvements
+
+- Add user authentication and the ability to create a personalized watchlist.
+- Implement dark/light theme toggle.
+- Improve search optimization with debouncing.
+- Add real-time push notifications for price changes.
+
+---
+
+### Resources
+
+- [CoinGecko API Documentation](https://www.coingecko.com/en/api)
+- [Material-UI Documentation](https://mui.com/)
+- [Chart.js Documentation](https://www.chartjs.org/)
+
+---
+
+## Author
+
+- **Name**: B Kumar Adithya
+- Live Site URL: [https://cryptohunter123.netlify.app/](https://cryptohunter123.netlify.app/)
+- GitHub: [https://github.com/KumarADITHYA123](https://github.com/KumarADITHYA123)
+- LinkedIn: [https://www.linkedin.com/in/kumar-adithya-bathula-66294b2b2/](https://www.linkedin.com/in/kumar-adithya-bathula-66294b2b2/)
+
+---
